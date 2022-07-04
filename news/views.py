@@ -39,10 +39,11 @@ class NewsViews(APIView):
             return Response(data=serialized_data.data)
         return Response({"error": serialized_data.errors})
 
+
 class SingleNews(APIView):
     def get(self, request, id):
 
-        news_data = News.objects.get(id=id)
+        news_data = News.objects.filter(id=id)
         # serialized_data = NewsSerializer(data=news_data)
         # serialized_data.is_valid()
         # print(serialized_data.data)

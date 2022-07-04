@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from unicodedata import category
 from django.db import models
 
@@ -22,6 +23,8 @@ class News(models.Model):
     name = models.CharField("Yangilik nomi", max_length=150)
     text = models.TextField("Yangilik matni")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True, related_name="news")
+    image = models.ImageField("Yangilik rasmi", upload_to="image")
+
 
     # more info
     created_at = models.DateTimeField(auto_now_add=True)
