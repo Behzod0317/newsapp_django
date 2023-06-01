@@ -14,14 +14,14 @@ class Category(models.Model):
         return self.name
     
     class Meta:
-        verbose_name = 'Bo\'lim'
-        verbose_name_plural = 'Bo\'limlar'
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
 
 
 
 class News(models.Model):
-    name = models.CharField("Yangilik nomi", max_length=150)
-    text = models.TextField("Yangilik matni")
+    name = models.CharField("News title", max_length=150)
+    text = models.TextField("text")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True, related_name="news")
     image = models.ImageField("Yangilik rasmi", upload_to="image")
 

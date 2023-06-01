@@ -5,6 +5,7 @@ from .models import News
 from .serializers import NewsSerializer
 
 
+
 class NewsViews(APIView):
     def get(self, request):
         all_news = News.objects.all()

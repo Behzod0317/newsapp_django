@@ -22,4 +22,5 @@ class NewsSerializer(ModelSerializer):
             "category": instance.category.name  + " Nimadir",
             "created_at": instance.created_at,
             "updated_at": instance.updated_at
+            
         }
